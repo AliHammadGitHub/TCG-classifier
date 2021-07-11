@@ -98,7 +98,7 @@ def get_data(data_dir):
     print("Done getting data")
     return np.array(data, dtype=np.object)
 
-# only change data to real_data to train the whole data.
+# only change data to big_data to train the whole data.
 train = get_data(os.path.join(execution_path, 'data', 'train'))
 val = get_data(os.path.join(execution_path, 'data', 'test'))
 
