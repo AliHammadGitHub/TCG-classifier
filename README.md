@@ -10,9 +10,7 @@ TCG-Classifier is a Python library for classifying Card images of the Trading Ca
 pip install -r requirements.txt
 ```
 
-**2** - Download the training and testing datasets from [here](https://drive.google.com/file/d/1pNeSXZDUwEY7E8KIYIG03qQsX6vMd62H/view?usp=sharing) (~350mb) then extract it on the root of the project to replace the `./data` directory.
-
-**3** - (__OPTIONAL__) you can download pre-trained model from [here](https://drive.google.com/file/d/1KiZSRAA34yyuvxB0fCIvnHPYMtFU_PV6/view?usp=sharing) then extract it to `./models`
+**2** - (__OPTIONAL__) you can use the pre-trained model (complete_trained_model) 
 
 ## Usage
 
@@ -31,6 +29,13 @@ model_path = 'models/YOUR-MODEL-NAME'
 if start == "load":
     ...
 ```
+
+## To Run Project from Pycharm
+Just type in the Python Console of Pycharm:
+```bash
+execfile('scripts/classifier.py')
+```
+or simply run the classifier file. 
 
 ## Contributing
 Maybe you'll be able to contribute soon.

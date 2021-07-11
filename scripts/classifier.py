@@ -1,4 +1,4 @@
-from scanner import detect_image
+from scripts.forScan import detect_image
 import matplotlib.pyplot as plt
 import seaborn as sns
 
@@ -15,12 +15,11 @@ import cv2
 import os
 import time
 from PIL import Image
-import scanner
 import numpy as np
-import imutils
 print("Starting classifier...")
 
-
+path_parent = os.path.dirname(os.getcwd())
+os.chdir(path_parent)
 execution_path = os.getcwd()
 labels = ['ygo', 'mtg', 'poki']
 img_width = 223
@@ -28,16 +27,16 @@ img_height = 310
 cropped_size = 6
 
 start = "load"
-# dir = 'test_images\mtg'
-model_path = 'models\model-5-1625169312.1249607'
+# dir = 'test_images/mtg'
+model_path = 'models/complete_trained_model'
 
 if start == "load":
 
     model = keras.models.load_model(model_path)
-    # ? switch this to MTG dir or YGO idr
-    dir = 'test_images\mtg'
-    for img in os.listdir(dir):
-        img = os.path.join(dir, img)
+    # ? switch this to MTG dir, YGO dir or POKI
+    dir = 'test/poki'
+    for img in os.listdir(execution_path+"/data/"+dir):
+        img = os.path.join(execution_path+"/data/"+dir, img)
         # convert BGR to RGB format
         img_arr = cv2.imread(img)
         full_image = img_arr
@@ -99,7 +98,7 @@ def get_data(data_dir):
     print("Done getting data")
     return np.array(data, dtype=np.object)
 
-
+# only change data to real_data to train the whole data.
 train = get_data(os.path.join(execution_path, 'data', 'train'))
 val = get_data(os.path.join(execution_path, 'data', 'test'))
 

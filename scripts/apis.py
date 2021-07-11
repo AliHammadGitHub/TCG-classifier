@@ -1,3 +1,5 @@
+#getting the images from the apis to train the model
+
 #1- Yu-Gi-Oh! API | https://db.ygoprodeck.com/api-guide/
 
 ygo_api = "https://db.ygoprodeck.com/api/v7/cardinfo.php"

@@ -1,7 +1,7 @@
 import os
 import random
 
-
+# this file should separate the images into training and testing folders
 execution_path = os.getcwd()
 data_path = os.path.join(execution_path, 'data')
 images_path = os.path.join(data_path, 'images')
